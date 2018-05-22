@@ -36,7 +36,7 @@ class Planets extends React.Component {
 
 		//create an array of promises
 		for (let i=1; i<8; i++) {
-			let APIrequest = fetch(`https://swapi.co/api/planets/?page=${i}`)
+			let APIrequest = fetch(`https://swapi.co/api/planets/?page=${i}`, {cache: "force-cache"})
 				.then(response => {
 					return response.json();
 				})

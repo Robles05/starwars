@@ -36,7 +36,7 @@ class Starships extends React.Component {
 
 		//create an array of promises
 		for (let i=1; i<5; i++) {
-			let APIrequest = fetch(`https://swapi.co/api/starships/?page=${i}`)
+			let APIrequest = fetch(`https://swapi.co/api/starships/?page=${i}`, {cache: "force-cache"})
 				.then(response => {
 					return response.json();
 				})

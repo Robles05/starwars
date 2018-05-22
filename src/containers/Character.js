@@ -32,25 +32,27 @@ class Character extends React.Component {
 	}
 
 	componentDidMount() {
-		let APIrequests = [];
+		
+		if (!this.state.characters.length) {
+			let APIrequests = [];
+			//create an array of promises
+			for (let i=1; i<10; i++) {
+				let APIrequest = fetch(`https://swapi.co/api/people/?page=${i}`, {cache: "force-cache"})
+					.then(response => {
+						return response.json();
+					})
+				APIrequests.push(APIrequest);
+			}
 
-		//create an array of promises
-		for (let i=1; i<10; i++) {
-			let APIrequest = fetch(`https://swapi.co/api/people/?page=${i}`)
-				.then(response => {
-					return response.json();
+			//pass the array of promises and once they are all resolved flatten them to get an array of elements and add them to state
+			Promise.all(APIrequests)
+				.then(values => {
+					values = values.map(item => item.results);
+					values = [].concat.apply([], values);
+					this.setState({characters: values})
 				})
-			APIrequests.push(APIrequest);
-		}
-
-		//pass the array of promises and once they are all resolved flatten them to get an array of elements and add them to state
-		Promise.all(APIrequests)
-			.then(values => {
-				values = values.map(item => item.results);
-				values = [].concat.apply([], values);
-				this.setState({characters: values})
-			})
-			.catch(error => console.log(error))
+				.catch(error => console.log(error))
+			}
 	}
 
 	onSearchChange = (event) => {
