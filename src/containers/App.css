@@ -1,0 +1,11 @@
+
+@font-face {
+	font-family: 'Star Wars';
+	font-style: normal;
+	src: local('Star Wars'), url('star-wars-font.woff') format('woff');
+}
+
+h1 {
+	font-family: 'Star Wars', monospace;
+	color: white;
+}

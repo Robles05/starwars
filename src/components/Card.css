@@ -1,0 +1,8 @@
+.bgcolor {
+	background-color: rgb(229, 177, 58, 0.2);
+}
+
+.card-height {
+  height: 150px;
+/*  overflow: scroll;*/
+}
