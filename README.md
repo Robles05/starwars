@@ -1,4 +1,4 @@
-# StarWars Search App
+# Star Wars Search App
 This is a React app , where you can search for Star Wars characters , spaceships, planets.
 
 ## Built with
