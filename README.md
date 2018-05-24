@@ -7,9 +7,3 @@ The app was built using the SWAPI Api - https://swapi.co/documentation and it wa
 ## Deployment
 The site was deployed using [GitHub Pages](https://pages.github.com/) following the steps for React apps outlined in this [article](https://itnext.io/so-you-want-to-host-your-single-age-react-app-on-github-pages-a826ab01e48).
 
-## Authors
--Róbert Horváth
-
-## Licence
-This project is licenced under the MIT Licence - see the [LICENCE](./LICENCE) file for details.
-
